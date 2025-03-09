@@ -10,7 +10,7 @@ from util import set_background
 set_background('BGImage.png')
 
 working_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = f"{working_dir}/maize-leaf-disease-model.h5"
+model_path = f"{working_dir}/maize-leaf-disease-model-1.h5"
 
 # Load the pre-trained model
 model = tf.keras.models.load_model(model_path)
@@ -47,14 +47,15 @@ def get_medicine_recommendation(disease):
         "Common Rust": "Use fungicides such as Propiconazole. Rotate crops and ensure proper irrigation management.",
         "Northern Leaf Blight": "Apply fungicides like Pyraclostrobin. Use disease-resistant seeds and manage crop debris.",
         "Healthy": "No treatment needed. Maintain regular crop monitoring and optimal growing conditions.",
-        "Not Maize Leaf": "Unknown"
+        "Not Maize Leaf": "Please upload a valid maize leaf image."
     }
     return medicine_recommendations.get(disease, "No specific recommendation available.")
 
 # Streamlit App
-st.title('AgriGuide: Disease Identification in Maize Leaf')
 
-uploaded_image = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
+st.title("AgriGuide: Disease Identification in Maize Leaf 🌽")
+
+uploaded_image = st.file_uploader("📂 Upload a Maize Leaf Image (Only JPG, JPEG, PNG formats are supported)", type=["jpg", "jpeg", "png"])
 
 if uploaded_image is not None:
     image = Image.open(uploaded_image)
