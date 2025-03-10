@@ -42,21 +42,25 @@ This project aims to identify and classify diseases in maize leaves using **Conv
 5. **Loss Function:** Categorical Cross-Entropy
 
 ## 📊 Results
-- **Metric**	**Value**
-- **Accuracy**	**95.0%**
-- **Precision**	**94.5%**
-- **Recall**	**93.8%**
-- **F1-Score**	**94.1%**
+| Metric     | Value  | 
+|------------|--------|
+| Accuracy   | 92.5%  | 
+| Precision  | 94.0%  | 
+| Recall     | 90.0%  | 
+| F1-Score   | 95.0%  | 
+
 
 ## 📌 Key Code Snippet
-- model = Sequential([
--     Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 3)),
--    MaxPooling2D((2, 2)),
--    Flatten(),
--    Dense(128, activation='relu'),
--    Dense(5, activation='softmax')  
-- ])
-- model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+```
+model = Sequential([
+    Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 3)),
+    MaxPooling2D((2, 2)),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dense(5, activation='softmax')  
+])
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+```
 
 ## ⚙️ Requirements
 1. **Python 3.8+**
