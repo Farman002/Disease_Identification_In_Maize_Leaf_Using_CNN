@@ -3,7 +3,7 @@
 This project aims to identify and classify diseases in maize leaves using **Convolutional Neural Networks (CNN)**. By analyzing leaf images, the model predicts the type of disease affecting the maize crop, enabling timely intervention for farmers.
 
 ## 🚀 Demo
-![App Screenshot](Streamlit-Web-Interface.png)
+![App Screenshot](Streamlit Web Interface.png)
 
 ## 📋 Features
 - **Image Classification:** Detects and classifies multiple types of diseases in maize leaves.
