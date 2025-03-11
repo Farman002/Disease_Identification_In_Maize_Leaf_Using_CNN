@@ -31,7 +31,7 @@ This project aims to identify and classify diseases in maize leaves using **Conv
    streamlit run app.py
 
 ## 🧠 Model Architecture
-1. **Base Model:** MobileNetV2 / ResNet (replace based on your choice).
+1. **Base Model:** Custom CNN.
 2. **Layers:**
     - Convolutional Layers
     - Batch Normalization
@@ -44,10 +44,10 @@ This project aims to identify and classify diseases in maize leaves using **Conv
 ## 📊 Results
 | Metric     | Value  | 
 |------------|--------|
-| Accuracy   | 92.5%  | 
-| Precision  | 94.0%  | 
-| Recall     | 90.0%  | 
-| F1-Score   | 95.0%  | 
+| Accuracy   | 98.00%  | 
+| Precision  | 97.60%  | 
+| Recall     | 97.80%  | 
+| F1-Score   | 98.00%  | 
 
 
 ## 📌 Key Code Snippet
