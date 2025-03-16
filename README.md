@@ -79,7 +79,9 @@ model.add(Activation('relu'))
 
 model.add(Dense(5))
 model.add(Activation('softmax'))
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam',
+              loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+              metrics=["accuracy"])
 ```
 
 ## ⚙️ Requirements
