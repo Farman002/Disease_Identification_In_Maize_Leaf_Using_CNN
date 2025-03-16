@@ -43,10 +43,18 @@ def predict_image_class(model, image_path, class_indices):
 # Function to Get Medicine Recommendation
 def get_medicine_recommendation(disease):
     medicine_recommendations = {
-        "Gray Leaf Spot": "Apply fungicides like Azoxystrobin or Mancozeb. Ensure proper crop rotation and use resistant varieties.",
-        "Common Rust": "Use fungicides such as Propiconazole. Rotate crops and ensure proper irrigation management.",
-        "Northern Leaf Blight": "Apply fungicides like Pyraclostrobin. Use disease-resistant seeds and manage crop debris.",
-        "Healthy": "No treatment needed. Maintain regular crop monitoring and optimal growing conditions.",
+        "Gray Leaf Spot": """Apply fungicides like **Azoxystrobin** or **Mancozeb**.  
+        Ensure proper **Crop rotation** and use **Resistant Varieties**.""",
+
+        "Common Rust": """Use fungicides such as **Propiconazole**.  
+        Rotate crops and ensure **Proper Irrigation Management**.""",
+
+        "Northern Leaf Blight": """Apply fungicides like **Pyraclostrobin**.  
+        Use **Disease-Resistant Seeds** and manage **Crop Debris**.""",
+
+        "Healthy": """No treatment needed.  
+        Maintain **Regular Crop Monitoring** and **Optimal Growing Conditions**.""",
+
         "Not Maize Leaf": "Please upload a valid maize leaf image."
     }
     return medicine_recommendations.get(disease, "No specific recommendation available.")
@@ -67,12 +75,10 @@ if uploaded_image is not None:
 
     with col2:
         if st.button('Classify'):
-            # Predict the class and confidence score of the uploaded image
             prediction, confidence = predict_image_class(model, uploaded_image, class_indices)
-
-            # Display class and confidence score
-            st.success(f'Prediction: {prediction} (Confidence: {confidence * 100:.2f}%)')
-
-            # Get and display medicine recommendation
-            recommendation = get_medicine_recommendation(prediction)
-            st.info(f'Medicine Recommendation: {recommendation}')
+            if confidence < 0.70:
+                st.error("Please upload a valid maize leaf image.")
+            else:
+                st.success(f'Prediction: {prediction} (Confidence: {confidence * 100:.2f}%)')
+                recommendation = get_medicine_recommendation(prediction)
+                st.info(f'Medicine Recommendation: {recommendation}')
