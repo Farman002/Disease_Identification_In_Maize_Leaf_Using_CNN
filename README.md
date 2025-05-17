@@ -20,7 +20,7 @@ This project aims to identify and classify diseases in maize leaves using **Conv
 
 ## 🛠️ Installation
 1. **Clone the repository:**
-
+   '''bash
    git clone https://github.com/yourusername/Disease_Identification_In_Maize_Leaf_Using_CNN.git
    cd Disease_Identification_In_Maize_Leaf_Using_CNN
 3. **Install required libraries:**
