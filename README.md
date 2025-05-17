@@ -20,14 +20,11 @@ This project aims to identify and classify diseases in maize leaves using **Conv
 
 ## 🛠️ Installation
 1. **Clone the repository:**
-   ```bash
    git clone https://github.com/yourusername/Disease_Identification_In_Maize_Leaf_Using_CNN.git
    cd Disease_Identification_In_Maize_Leaf_Using_CNN
 2. **Install required libraries:**
-   '''bash
    pip install -r requirements.txt
 3. **Run the Streamlit app:**
-   '''bash
    streamlit run app.py
 
 ## 🧠 Model Architecture
